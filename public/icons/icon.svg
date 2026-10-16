@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="DayLog">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4c8dff"/>
+      <stop offset="1" stop-color="#2454d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="256" cy="262" r="126"/>
+    <path d="M256 186v82l58 36"/>
+    <path d="M256 96v34M256 394v34M96 262h34M382 262h34"/>
+  </g>
+  <circle cx="256" cy="262" r="20" fill="#ffffff"/>
+</svg>

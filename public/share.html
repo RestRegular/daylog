@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>DayLog · 分享</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+<meta name="color-scheme" content="light dark" />
+<meta name="robots" content="noindex" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/icons/icon-180.png" />
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="share-body-page">
+  <div class="app-shell share-shell">
+    <header class="topbar">
+      <div class="topbar-text">
+        <h1 id="top-title">分享的时间线</h1>
+        <p id="top-sub">正在加载…</p>
+      </div>
+      <div class="topbar-actions">
+        <button id="refresh-btn" class="icon-btn" type="button" aria-label="刷新">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 6M20 5v6h-6"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="share-main" class="main">
+      <div class="boot">
+        <span class="spinner"></span>
+        <p>正在加载…</p>
+      </div>
+    </main>
+
+    <footer class="share-footer">
+      <a class="link-btn" href="/">我也要记录我的每一天 →</a>
+    </footer>
+  </div>
+
+  <div id="toast-host" class="toast-host" aria-live="polite"></div>
+  <script type="module" src="/js/share.js"></script>
+</body>
+</html>

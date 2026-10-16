@@ -1,0 +1,25 @@
+{
+  "name": "daylog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DayLog - 分享你每天在做什么的移动端优先 Web 应用（文本 / 图片 / 视频时间线）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "check": "node scripts/healthcheck.js",
+    "test": "node scripts/e2e.js"
+  },
+  "keywords": [
+    "timeline",
+    "daily-log",
+    "diary",
+    "mobile-web",
+    "pwa"
+  ],
+  "license": "MIT",
+  "dependencies": {}
+}

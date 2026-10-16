@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>DayLog · 记录并分享你的每一天</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="记录每天在做什么，用一条链接分享给家人和朋友。支持文字、图片、视频。" />
+<meta name="theme-color" content="#0f172a" />
+<meta name="color-scheme" content="light dark" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="DayLog" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/icons/icon-180.png" />
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-text">
+        <h1 id="top-title">DayLog</h1>
+        <p id="top-sub">记录并分享你的每一天</p>
+      </div>
+      <div class="topbar-actions">
+        <button id="share-btn" class="icon-btn hidden" type="button" aria-label="分享">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0L8 8m4-4 4 4M5 14v5.5A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V14"/></svg>
+        </button>
+        <button id="refresh-btn" class="icon-btn hidden" type="button" aria-label="刷新">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 6M20 5v6h-6"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="boot">
+        <span class="spinner"></span>
+        <p>正在加载…</p>
+      </div>
+    </main>
+
+    <button id="compose-btn" class="fab hidden" type="button" aria-label="记录此刻">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+    </button>
+
+    <nav id="bottom-nav" class="bottom-nav hidden">
+      <a class="nav-item" href="#/home" data-view="home">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5M5.5 9.5V20h13V9.5"/></svg>
+        <span>时间线</span>
+      </a>
+      <a class="nav-item" href="#/calendar" data-view="calendar">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v3M17 3v3M4 8h16M5 5.5h14A1.5 1.5 0 0 1 20.5 7v12A1.5 1.5 0 0 1 19 20.5H5A1.5 1.5 0 0 1 3.5 19V7A1.5 1.5 0 0 1 5 5.5Z"/></svg>
+        <span>日历</span>
+      </a>
+      <a class="nav-item" href="#/friends" data-view="friends">
+        <span class="nav-icon-wrap">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M2.5 20c1.1-3 3.4-4.5 6.5-4.5s5.4 1.5 6.5 4.5"/><path d="M16.5 6.2a3 3 0 0 1 0 5.6M18.5 15.6c1.6.7 2.7 2 3.2 3.9"/></svg>
+          <em id="friends-badge" class="nav-badge hidden">0</em>
+        </span>
+        <span>好友</span>
+      </a>
+      <a class="nav-item" href="#/search" data-view="search">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm10 2-4.5-4.5"/></svg>
+        <span>搜索</span>
+      </a>
+      <a class="nav-item" href="#/settings" data-view="settings">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2v.2a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.9.4l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.9H2a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 3.7 8.6a1.7 1.7 0 0 0-.4-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 2.9-1.2V2a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.9 1.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0 1.2 2.9h.2a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1.1Z"/></svg>
+        <span>设置</span>
+      </a>
+    </nav>
+  </div>
+
+  <div id="toast-host" class="toast-host" aria-live="polite"></div>
+  <noscript><p style="padding:24px;text-align:center">DayLog 需要启用 JavaScript 才能使用。</p></noscript>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
